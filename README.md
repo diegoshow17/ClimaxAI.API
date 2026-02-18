@@ -37,3 +37,69 @@ El proyecto está organizado en capas:
 6. Se envía la información a la IA.
 7. Se retorna respuesta completa al cliente.
 8. Se guarda el registro en historial en memoria.
+
+   ---
+
+## 📡 Endpoints Disponibles
+
+### 🔎 Consultar Clima por Sector
+
+**GET**
+
+/api/Test/clima?lat=4.7110&lon=-74.0721&sector=agricultura
+
+
+### Parámetros
+
+| Parámetro | Tipo   | Descripción |
+|-----------|--------|------------|
+| lat       | double | Latitud (-90 a 90) |
+| lon       | double | Longitud (-180 a 180) |
+| sector    | string | Sector económico (agricultura, logistica, construccion) |
+
+### Respuesta Ejemplo
+
+```json
+{
+  "temperatura": 18.4,
+  "velocidadViento": 12.3,
+  "descripcion": "Parcialmente nublado",
+  "indiceImpacto": 72,
+  "nivelRiesgo": "Alto",
+  "recomendacion": "Alto riesgo de afectación en cultivos.",
+  "analisisIA": "Impacto operativo moderado generado por IA."
+}
+```
+---
+
+### 📜 Consultar Historial de Consultas
+
+**GET**
+
+/api/Test/historial
+
+### Descripción
+
+Devuelve la lista de todas las consultas climáticas realizadas durante la ejecución de la API.
+
+### Respuesta Ejemplo
+
+```json
+[
+  {
+    "temperatura": 18.4,
+    "velocidadViento": 12.3,
+    "descripcion": "Parcialmente nublado",
+    "indiceImpacto": 72,
+    "nivelRiesgo": "Alto",
+    "recomendacion": "Alto riesgo de afectación en cultivos.",
+    "analisisIA": "Impacto operativo moderado generado por IA."
+  }
+]
+```
+
+
+
+
+
+
